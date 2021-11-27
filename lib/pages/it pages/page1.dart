@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 import "package:get/get.dart";
 import 'package:dean_institute_mobile_app/pages/course_details_page.dart';
 import 'package:dean_institute_mobile_app/pages/home_items/dp.dart';
+import 'package:dean_institute_mobile_app/pages/home_items/dpa.dart';
 
 
   
@@ -266,16 +267,20 @@ class _HomePageState extends State<HomePage> {
             // trailing: Icon(Icons.book_online),
               onTap: () {
                       if(index==0){
+                          var p="5000";
+                        Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                       //  Get.to(CourseDetailss(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].sellingPrice]);
                         // Get.to(MyAllitsc(),arguments:snapshot.data[index].slug,);
                         //  Get.to(CourseDetailss(),arguments:snapshot.data[index].image);
                         // Get.to(CourseDetails(  courseModel: s, ));
-                        Get.to(CourseDetailss(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                     //   Get.to(CourseDetailssAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
                       }
                       else if(index==1){
+                          var p="5000";
+                        Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                          // Get.to(CourseDetailss(),arguments:snapshot.data[index].slug,);
                           
-                           Get.to(CourseDetailss(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                         //  Get.to(CourseDetailss(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
                        // Get.to(MyAll());
                       }
                       else if(index==2){

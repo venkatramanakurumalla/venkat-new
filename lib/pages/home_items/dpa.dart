@@ -114,7 +114,7 @@ class CourseDetailsAll extends StatelessWidget {
                             ),
                           ),
                           Spacer(),
-                          Text("",//Get.arguments[3],
+                          Text("\$"+Get.arguments[3],
                            // "\$${courseModel.price.toStringAsFixed(2)}",
                             style: GoogleFonts.lato(
                               fontSize: 20.sp,
@@ -231,7 +231,8 @@ class CourseDetailsAll extends StatelessWidget {
                  child: InkWell(
                    onTap: () {
                      var g=Get.arguments[0];
-                    Get.to(PaymentScreen(),arguments:g);
+                     var p=Get.arguments[3];
+                    Get.to(PaymentScreen(),arguments:[g,p]);
                       //_showAlert(context, () {
                       //  Get.toNamed("enroll", arguments: courseModel);}
                     // );

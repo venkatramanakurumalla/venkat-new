@@ -46,7 +46,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
   void payNow1() async {
     //the amount must be transformed to cents
     var response =
-    await StripeServices.payNowHandler(amount: '10011', currency: 'USD');
+    await StripeServices.payNowHandler(amount: Get.arguments[1], currency: 'USD');
       Get.snackbar(
               response.message,
                "Hello",
@@ -89,7 +89,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
           onPressed: () {
            payNow1();
           },
-          child:Image.network('https://deaninstitute.fastrider.co//'+Get.arguments),
+          child:Image.network('https://deaninstitute.fastrider.co//'+Get.arguments[0]),
 
           ),
               
@@ -103,7 +103,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 //  color:Colors.blue  
               ),  
          child:     PushableButton(
-  child: Text('PAY NOW 😎'),
+  child: Text('PAY NOW 😎'+Get.arguments[1]),
   height: 60,
   elevation: 8,
   hslColor: HSLColor.fromAHSL(1.0, 195, 1.0, 0.43),//(1.0, 120, 1.0, 0.37),
@@ -116,34 +116,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
   onPressed: () => payNow()),
 )
 
-         //  child:TextButton(
-        //  onPressed: () {
-          // payNow1();
-         // },
-          //child:Image.network('https://thumbs.dreamstime.com/b/pay-now-web-button-computer-generated-illustration-isolated-white-background-pay-now-button-122079473.jpg'),
-
-        //  ),
-              //child: Text("Flutter",style: TextStyle(color:Colors.yellowAccent,fontSize:20),),  
-           // ),  
-           
-          ]  
-      ),  
-      
-      //  TextButton(
-         //  onPressed: () {
-          //   payNow1();
-         //  },
-           
-            
-           
-         //   Image.network('https://deaninstitute.fastrider.co//'+Get.arguments),
-
-        // child:Image.network('https://thumbs.dreamstime.com/b/pay-now-web-button-computer-generated-illustration-isolated-white-background-pay-now-button-122079473.jpg'),
-
-          // child: Text('pay'),
-
-        // )),)]
-     
-   );
+        
+           ] ));
  }
 }

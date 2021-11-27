@@ -244,118 +244,119 @@ class _HomePageState extends State<HomePage> {
             // trailing: Icon(Icons.book_online),
               onTap: () {
                       if(index==0){
-                        Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                        var p="5000";
+                        Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                         // Get.to(CourseDetails(  courseModel: s, ));
                       }
                       else if(index==1){
-                         Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                        var p="5000";
+                         Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                        // Get.to(MyAll());
                       }
                       else if(index==2){
-                         Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                        var p="5000";
+                         Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                        //Get.to(MyAll());
                       }
                        else if(index==3){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                         var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                       // Get.to(MyAll());
                       }
                        else if(index==4){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                         var p="8000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                       // Get.to(MyAll());
                       }
-                       else if(index==5){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==5){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==6){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==6){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==7){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==7){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==8){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==8){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==9){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==9){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==10){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==10){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
-                      } else if(index==11){
-                         Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
-                     //  Get.to(MyAll());
-                      }
-                       else if(index==12){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                      } else if(index==11){var p="5000";
+                         Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==13){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==12){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==14){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==13){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==15){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==14){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
+                     //  Get.to(MyAll());
+                      }
+                       else if(index==15){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       } 
-                       else if(index==16){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==16){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==17){ 
-                         Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==18){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==18){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==19){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==19){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==20){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==20){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==21){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==21){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==22){var p="3000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==22){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==23){var p="3000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==23){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==24){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==24){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==25){var p="3000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==25){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==26){var p="3000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==26){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==27){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
-                       else if(index==27){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
-                     //  Get.to(MyAll());
-                      }
-                       else if(index==28){
-                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug]);
+                       else if(index==28){var p="5000";
+                          Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);
                      //  Get.to(MyAll());
                       }
                  // ),
