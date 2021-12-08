@@ -12,6 +12,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:get/get.dart';
 
 import 'package:dean_institute_mobile_app/data/character_api.dart';
 import 'package:dean_institute_mobile_app/model/character.dart';
@@ -80,7 +81,7 @@ dynamic email = Get.arguments;
       backgroundColor: Color(0xFFE9E9E9),
       appBar: AppBar(
         
-      //  title: Text("${email}"),
+      //  title: Text(email),
       //  var one = Get.arguments;
         leading: Container(),
         toolbarHeight: 163.h,
@@ -94,12 +95,12 @@ dynamic email = Get.arguments;
        body: Container(
        child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+               
                 maxCrossAxisExtent: 300,
                 childAspectRatio: 3 / 2,
                 crossAxisSpacing:5,
                 mainAxisSpacing: 5),
-           // itemCount: myProducts.length,
-             itemCount:  characterList.length,
+           itemCount:  characterList.length,
             itemBuilder: (BuildContext ctx, index) {
                 return ListTile(
                 //  title: Text(characterList[index].category_name),
@@ -108,7 +109,7 @@ dynamic email = Get.arguments;
                   //  background 
                    leading: Image.network("https://deaninstitute.fastrider.co//"+characterList[index].category_logo),
                     title: Text(characterList[index].category_name),
-                    onTap: () {
+                 onTap: () {
                       if(index==0){
                         Get.to(MyAllit(),arguments:characterList[index].category_name);
                        // MyAllitsc1
@@ -117,7 +118,8 @@ dynamic email = Get.arguments;
                         Get.to(MyAppcc(),arguments:characterList[index].category_name);
                       }
                       else if(index==2){
-                      // Get.to(MyAppcc(),arguments:characterList[index].category_name);
+                      //
+                      
                       }
                        else if(index==3){
                      //  Get.to(MyAppcc (),arguments:characterList[index].category_name);

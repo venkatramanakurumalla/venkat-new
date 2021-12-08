@@ -233,16 +233,18 @@ class _HomePageState extends State<HomePage> {
  height: 1000,
     
               child:     Card(
+                color:Colors.redAccent,
         elevation: 1.0,
         child: Column(
           children: [
             ListTile(
              // title: Text(snapshot.data[index].slug,textAlign: TextAlign.center,),
-              //subtitle: Text("Enroll now"),
+            //  subtitle: Text("Enroll now"),
               
-             trailing: Image.network('https://deaninstitute.fastrider.co//'+snapshot.data[index].image),
-            // trailing: Icon(Icons.book_online),
-              onTap: () {
+           trailing:
+          Image.network('https://deaninstitute.fastrider.co//'+snapshot.data[index].image),
+            // subtitle: Icon(Icons.book_online),
+             onTap: () {
                       if(index==0){
                         var p="5000";
                         Get.to(CourseDetailsAll(),arguments:[snapshot.data[index].image,snapshot.data[index].description,snapshot.data[index].slug,p]);

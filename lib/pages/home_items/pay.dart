@@ -4,6 +4,7 @@ import 'package:dean_institute_mobile_app/pages/home_items/payment.dart';
 //import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get.dart';
 import 'package:pushable_button/pushable_button.dart';
+import '../payment.dart';
 import '../thanku_page.dart';
 
 class PaymentScreen extends StatefulWidget {
@@ -23,21 +24,21 @@ class _PaymentScreenState extends State<PaymentScreen> {
     //the amount must be transformed to cents
     var response =
     await StripeServices.payNowHandler(amount: '111', currency: 'USD');
-      Get.snackbar(
-              response.message,
-               "Hello",
-               icon: Icon(Icons.person, color: Colors.white),
-               snackPosition: SnackPosition.BOTTOM,
-               backgroundColor: Colors.red,
-               borderRadius: 20,
-               margin: EdgeInsets.all(15),
-               colorText: Colors.white,
-               duration: Duration(seconds: 4),
-               isDismissible: true,
-               dismissDirection: SnackDismissDirection.HORIZONTAL,
-               forwardAnimationCurve: Curves.easeOutBack,
+     // Get.snackbar(
+           //   response.message,
+             //  "Hello",
+             //  icon: Icon(Icons.person, color: Colors.white),
+             //  snackPosition: SnackPosition.BOTTOM,
+              // backgroundColor: Colors.red,
+              // borderRadius: 20,
+              // margin: EdgeInsets.all(15),
+              // colorText: Colors.white,
+              // duration: Duration(seconds: 4),
+              // isDismissible: true,
+            //   dismissDirection: SnackDismissDirection.HORIZONTAL,
+            //   forwardAnimationCurve: Curves.easeOutBack,
 
-               );
+           //    );
      content: Text(response.message);
      
         duration: new Duration(milliseconds: response.success == true ? 1200 : 3000);
@@ -47,22 +48,42 @@ class _PaymentScreenState extends State<PaymentScreen> {
     //the amount must be transformed to cents
     var response =
     await StripeServices.payNowHandler(amount: Get.arguments[1], currency: 'USD');
-      Get.snackbar(
-              response.message,
-               "Hello",
-               icon: Icon(Icons.person, color: Colors.white),
-               snackPosition: SnackPosition.BOTTOM,
-               backgroundColor: Colors.red,
-               borderRadius: 20,
-               margin: EdgeInsets.all(15),
-               colorText: Colors.white,
-               duration: Duration(seconds: 4),
-               isDismissible: true,
-               dismissDirection: SnackDismissDirection.HORIZONTAL,
-               forwardAnimationCurve: Curves.easeOutBack,
+     if(response.message=="success"){
+       Get.to(ThankYouPage());
+     }
+      else if(response.message=='Transaction failed'){
+   Get.to(ThankYouPage());
+     }
+else{
+Text(response.message);
+}
+    
+     // Get.snackbar(
+           //   response.message,
+            //   "Hello",
+            //   icon: Icon(Icons.person, color: Colors.white),
+             //  snackPosition: SnackPosition.BOTTOM,
+             //  backgroundColor: Colors.red,
+             //  borderRadius: 20,
+              // margin: EdgeInsets.all(15),
+              // colorText: Colors.white,
+             //  duration: Duration(seconds: 4),
+             //  isDismissible: true,
+              // dismissDirection: SnackDismissDirection.HORIZONTAL,
+              // forwardAnimationCurve: Curves.easeOutBack,
 
-               );
+              // );
      content: Text(response.message);
+     if(response.message=="success"){
+       Get.to(ThankYouPage());
+       
+     }
+     else if(response.message=='Transaction failed'){
+   Get.to(ThankYouPage());
+     }
+else{
+
+}
         duration: new Duration(milliseconds: response.success == true ? 1200 : 3000);
     // Get.to(ThankYouPage());
    // print('response message ${response.message}');
@@ -113,10 +134,11 @@ class _PaymentScreenState extends State<PaymentScreen> {
     blurRadius: 7,
     offset: Offset(0, 2),
   ),
-  onPressed: () => payNow()),
-)
+ 
+// onPressed: () => payNow()),
+onPressed: () =>Get.to( RegistePage()) ),
 
         
-           ] ));
+     ) ] ));
  }
 }

@@ -49,7 +49,7 @@ class LoginPage extends StatelessWidget {
     var response = await http.post(Uri.parse('https://deaninstitute.fastrider.co/api/login'), body: data);
     if(response.statusCode == 200) {
        
-     Get.to(HomePage(),arguments:"hai");
+     Get.to(HomePage(),arguments:email);
       jsonResponse = json.decode(response.body);
       print(jsonResponse); 
        // Get.snackbar("Sucess", "Login Sucess");

@@ -98,7 +98,7 @@ class Profile extends StatelessWidget {
              // backgroundImage: I
             ),
               Text(
-              'venkat',
+              '',
               style: TextStyle(
                 fontSize: 40,
                 fontFamily: 'Pacifico',
@@ -136,6 +136,7 @@ Card(
                   color: Colors.teal,
                 ),
                 title: Text(
+          
                   "+91 8919353233",
                   style: TextStyle(
                     fontSize: 20,

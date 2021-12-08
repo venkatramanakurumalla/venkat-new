@@ -1,7 +1,14 @@
+
+
+import 'package:dean_institute_mobile_app/pages/home_items/search.dart';
+import 'package:dean_institute_mobile_app/pages/home_items/subtwo.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
+
 
 import 'icon_buttons.dart';
 
@@ -72,19 +79,22 @@ class HomePageAppBar extends StatelessWidget {
                             enabledBorder: InputBorder.none,
                             errorBorder: InputBorder.none,
                             disabledBorder: InputBorder.none,
-                            prefixIcon: Icon(Icons.search),
+                            prefixIcon:Icon(Icons.search,),
                             contentPadding: EdgeInsets.only(
                                 left: 15.w,
                                 bottom: 11.h,
                                 top: 11.h,
                                 right: 15.w),
-                            hintText: "Search courses,"),
-                            // bootcamp"),
+                            hintText: "Search courses, bootcamp"),
                       ),
                     )),
+                    // onButtonTap: () {
+                 //   print("Pressed Bell Button");
+                //  },
               )),
         ],
       ),
     );
   }
 }
+

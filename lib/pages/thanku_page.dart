@@ -1,7 +1,11 @@
+import 'package:dean_institute_mobile_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 import 'home_button.dart';
+import 'home_items/all.dart';
+import 'home_items/home_main_page.dart';
 
 class ThankYouPage extends StatefulWidget {
 //  const ThankYouPage({Key? key, required this.title}) : super(key: key);
@@ -37,10 +41,10 @@ class _ThankYouPageState extends State<ThankYouPage> {
                 color: themeColor,
                 shape: BoxShape.circle,
               ),
-              child: Image.asset(
-                "assets/card.png",
-                fit: BoxFit.contain,
-              ),
+            //  child: Image.asset(
+                //"assets/card.png",
+               // fit: BoxFit.contain,
+            //  ),
             ),
             SizedBox(height: screenHeight * 0.1),
             Text(
@@ -74,7 +78,10 @@ class _ThankYouPageState extends State<ThankYouPage> {
             Flexible(
               child: HomeButton(
                 title: 'Home',
-                onTap: () {},
+                onTap: () {
+                  Get.to(MyAlll());
+                  
+                },
               ),
             ),
           ],

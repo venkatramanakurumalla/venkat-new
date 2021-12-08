@@ -106,23 +106,21 @@ class StripeServices {
 
       if (response.status == 'succeeded') {
  
- // Get.to(ThankYouPage());
+  Get.to(ThankYouPage());
        //  Get.to(ThankYouPage());
                       // Get.to(MyAll());
         return 
        // Get.to(ThankYouPage());
      // Future(computation)   Get.to(ThankYouPage());
       StripeTransactionResponse(
-          message:"Sucess"
-        
-       , success: true,);
+          message:"Sucess", success: true,);
         // Get.to(ThankYouPage());
       // );
            //  Get.to(CourseDetailss(),arguments:snapshot.data[index].childcategory_name,);
                       // Get.to(MyAll());
 
 
-      } else {
+      } else {Get.to(ThankYouPage());
           Get.snackbar(
               "un Sucessful",
                "Hello ",
@@ -140,6 +138,8 @@ class StripeServices {
                );
         return StripeTransactionResponse(
             message: 'Transaction failed', success: false,);
+          
+            
       }
     } catch (error) {
      // return StripeTransactionResponse(
@@ -156,7 +156,7 @@ class StripeServices {
               "Something went wrong",
                "Hello",
                icon: Icon(Icons.person, color: Colors.white),
-               snackPosition: SnackPosition.BOTTOM,
+               snackPosition: SnackPosition.TOP,
                backgroundColor: Colors.red,
                borderRadius: 20,
                margin: EdgeInsets.all(15),

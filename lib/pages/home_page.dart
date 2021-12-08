@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:dean_institute_mobile_app/pages/home_items/bootcamp_page.dart';
 import 'package:dean_institute_mobile_app/pages/home_items/courses_page.dart';
 import 'package:dean_institute_mobile_app/pages/home_items/home_main_page.dart';
@@ -5,11 +7,12 @@ import 'package:dean_institute_mobile_app/pages/home_items/profile_page.dart';
 import 'package:dean_institute_mobile_app/utility/dean_institute_icons_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:dean_institute_mobile_app/pages/about.dart';
+import 'package:get/get.dart';
 //import 'package:dean_institute_mobile_app/pages/search.dart';
 import 'package:dean_institute_mobile_app/pages/home_items/search.dart';
 
 import 'home_items/all.dart';
-import 'home_items/self_courses_page.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,6 +22,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+ var email=Get.arguments;
+ 
+
   List<Widget> _bottomNavigationPages = [
     Home(),
    // Courses(),
@@ -28,17 +34,22 @@ class _HomePageState extends State<HomePage> {
    // Bootcamp(),
   // Myabout(),
    Profile(),
-    HomeScreenn(),
+  
+  //  HomeScreenn(),
+  Search(),
   // MyCourses(),
   //  Profile(),
      Myabout()
   ];
 
   int _selectedIndex = 0;
+
   @override
+   
   Widget build(BuildContext context) {
     return Scaffold(
       body: _getBody(),
+      
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
@@ -58,10 +69,13 @@ class _HomePageState extends State<HomePage> {
            // ),
            // label: "About",
            BottomNavigationBarItem(
+              
             icon: Icon(
               Icons.person,
             ),
+            // Get.to(h,arguments:email),
             label: "Profile",
+            
           ),
           BottomNavigationBarItem(
             icon: Icon(

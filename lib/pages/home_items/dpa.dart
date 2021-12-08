@@ -11,6 +11,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:dean_institute_mobile_app/pages/home_items/pay.dart';
 
+import '../payment.dart';
+
 class CourseDetailsAll extends StatelessWidget {
   //final SampleCourseModel courseModel;
   //const CourseDetailss({Key? key, required this.courseModel}) : super(key: key);
@@ -233,6 +235,8 @@ class CourseDetailsAll extends StatelessWidget {
                      var g=Get.arguments[0];
                      var p=Get.arguments[3];
                     Get.to(PaymentScreen(),arguments:[g,p]);
+                   // Get.to(RegistePage());
+
                       //_showAlert(context, () {
                       //  Get.toNamed("enroll", arguments: courseModel);}
                     // );

@@ -1,159 +1,185 @@
-import 'package:dio/dio.dart';
+
+import 'dart:async';
+import 'dart:convert';
+
+import 'package:dean_institute_mobile_app/data/character_api.dart';
+import 'package:dean_institute_mobile_app/model/Courses.dart';
+import 'package:dean_institute_mobile_app/model/character.dart';
+import 'package:dean_institute_mobile_app/pages/home_items/course_pageone.dart';
+import 'package:dean_institute_mobile_app/pages/home_items/courses_page.dart';
+import 'package:dean_institute_mobile_app/pages/home_items/dp.dart';
+import 'package:dean_institute_mobile_app/pages/home_items/sample_data.dart';
+import 'package:dean_institute_mobile_app/pages/home_items/subone.dart';
+import 'package:dean_institute_mobile_app/pages/home_items/subtwo.dart';
+import 'package:dean_institute_mobile_app/pages/it%20pages/page1.dart';
+import 'package:dean_institute_mobile_app/pages/it%20pages/page2.dart';
+import 'package:dean_institute_mobile_app/services/BooksApi.dart';
+import 'package:dean_institute_mobile_app/widgets/SearchWidget.dart';
+import 'package:dean_institute_mobile_app/widgets/course_list_item.dart';
+import 'package:dean_institute_mobile_app/widgets/dynamic_tabs.dart';
+import 'package:dean_institute_mobile_app/widgets/home_app_bar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-class HomeScreenn extends StatefulWidget {
+class Search extends StatefulWidget {
+  const Search({Key? key}) : super(key: key);
+
   @override
-  _HomeScreennState createState() => _HomeScreennState();
+  _SearchState createState() => _SearchState();
 }
+ 
+class _SearchState extends State<Search> {
+  List<Courses> books = [];
+  String query = '';
+  Timer? debouncer;
 
-class _HomeScreennState extends State<HomeScreenn> {
-//Step 3
-  _HomeScreennState() {
-    _filter.addListener(() {
-      if (_filter.text.isEmpty) {
+  var characterList = <Character>[];
+  var characterList1 = <Character>[];
+  var characterList2 = <Character>[];
+  var characterList3 = <Character>[];
+  late List<Character> couses;
+
+  void getCharactersfromApi() async {
+    CharacterApi.getCharacters().then((response) {
+      setState(() {
+        Iterable list = json.decode(response.body);
+        characterList = list.map((model) => Character.fromJson(model)).toList();
+      });
+    });
+    void getCharactersfromApi1() async {
+      CharacterApi1.getCharacters().then((response) {
         setState(() {
-          _searchText = "";
-          filteredNames = names;
+          Iterable list = json.decode(response.body);
+          characterList1 =
+              list.map((model) => Character.fromJson(model)).toList();
         });
-      } else {
-        setState(() {
-          _searchText = _filter.text;
+      });
+      void getCharactersfromApi2() async {
+        CharacterApi2.getCharacters().then((response) {
+          setState(() {
+            Iterable list = json.decode(response.body);
+            characterList2 =
+                list.map((model) => Character.fromJson(model)).toList();
+          });
         });
-      }
-    });
-  }
-
-//Step 1
-  final TextEditingController _filter = new TextEditingController();
-  final dio = new Dio(); // for http requests
-  String _searchText = "";
-  //List names = new List();
-  var names = [];
-   // names we get from API
-  //List filteredNames = new List(); // names filtered by search text
-  var  filteredNames = [];
-  Icon _searchIcon = new Icon(Icons.search);
-  Widget _appBarTitle = new Text('Search Example');
-
-  //step 2.1
-  void _getNames() async {
-    final response =
-        await dio.get('https://www.deaninstitute.fastrider.co/api/search-course?');
-      //  https://www.deaninstitute.fastrider.co/api/search-course?Qa
-    //  https://www.deaninstitute.fastrider.co/api/search-course?softwere
-
-   // print(response.data);
-   // List tempList = new List();
-    var tempList = [];
-    for (int i = 0; i < response.data.length; i++) {
-      tempList.add(response.data[i]);
-    }
-    setState(() {
-      names = tempList;
-      filteredNames = names;
-    });
-  }
-
-//Step 2.2
-  void _searchPressed() {
-    setState(() {
-      if (this._searchIcon.icon == Icons.search) {
-        this._searchIcon = new Icon(Icons.close);
-        this._appBarTitle = new TextField(
-          controller: _filter,
-          decoration: new InputDecoration(
-              prefixIcon: new Icon(Icons.search), hintText: 'Search...'),
-        );
-      } else {
-        this._searchIcon = new Icon(Icons.search);
-        this._appBarTitle = new Text('Search Example');
-        filteredNames = names;
-        _filter.clear();
-      }
-    });
-  }
-
-  //Step 4
-  Widget _buildList() {
-    if (!(_searchText.isEmpty)) {
-    //  List tempList = new List();
-      var tempList = [];
-      for (int i = 0; i < filteredNames.length; i++) {
-        if (filteredNames[i]['slug']
-            .toLowerCase()
-            .contains(_searchText.toLowerCase())) {
-          tempList.add(filteredNames[i]);
+        void getCharactersfromApi3() async {
+          CharacterApi3.getCharacters().then((response) {
+            setState(() {
+              Iterable list = json.decode(response.body);
+              characterList3 =
+                  list.map((model) => Character.fromJson(model)).toList();
+            });
+          });
         }
       }
-      filteredNames = tempList;
     }
-    return ListView.builder(
-      itemCount: names == null ? 0 : filteredNames.length,
-      itemBuilder: (BuildContext context, int index) {
-        return new ListTile(
-          title: Text(filteredNames[index]['slug']),
-          onTap: () => print(filteredNames[index]['slug']),
-        );
-      },
-    );
   }
 
-  //STep6
-  Widget buildBar(BuildContext context) {
-    return new AppBar(
-      centerTitle: true,
-      title: _appBarTitle,
-      leading: new IconButton(
-        icon: _searchIcon,
-        onPressed: _getNames,
-      ),
-    );
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   getCharactersfromApi();
+  // }
 
   @override
   void initState() {
-    _getNames();
     super.initState();
+    getCharactersfromApi();
+    init();
   }
 
   @override
+  void dispose() {
+    debouncer?.cancel();
+    super.dispose();
+  }
+
+  void debounce(
+      VoidCallback callback, {
+        Duration duration = const Duration(milliseconds: 1000),
+      }) {
+    if (debouncer != null) {
+      debouncer!.cancel();
+    }
+
+    debouncer = Timer(duration, callback);
+  }
+
+  Future init() async {
+    final books = await BooksApi.getBooks(query);
+
+    setState(() => this.books = books);
+  }
+
+//var one = Get.arguments;
+  dynamic email = Get.arguments;
+
+  @override
+  //dynamic email = Get.arguments;
+  //  dynamic argumentData = Get.arguments;
   Widget build(BuildContext context) {
-     return Scaffold(
-      appBar: AppBar(title: Text('Search')),
-      body: Center(
-        child: Column(
+    return Scaffold(
+       // backgroundColor: Color(0xFFE9E9E9),
+       // appBar: AppBar(
+          //  title: Text("${email}"),
+          //  var one = Get.arguments;
+         // leading: Container(),
+         // toolbarHeight: 163.h,
+         // shape: RoundedRectangleBorder(
+             // borderRadius: BorderRadius.only(
+               // bottomLeft: Radius.circular(30.r),
+              //  bottomRight: Radius.circular(30.r),
+             // )),
+        //  flexibleSpace: HomePageAppBar(),
+      //  ),
+        body: Column(
           children: <Widget>[
-            Text('', style: TextStyle(fontSize: 18)),
-            ElevatedButton(
-              onPressed: 
-                _searchPressed,
-              
-              child: Text('Search'),
+            buildSearch(),
+            Expanded(
+              child: ListView.builder(
+                itemCount: books.length,
+                itemBuilder: (context, index) {
+                  final book = books[index];
+
+                  return buildBook(book);
+                },
+              ),
             ),
           ],
-        ),
-      ),
-    );
-    return Scaffold(
-     //  AppBar(
-       // centerTitle: true,
-       // title: _appBarTitle,
-    //    leading: new IconButton(
-     //   icon: _searchIcon,
-        //  onPressed: _searchPressed,
-     //   ),
-    // ),
-   //  appBar:buildBar(context ),// buildBar(context),
-     body: Container(
-        child: _buildList(),
-      ),
-      resizeToAvoidBottomInset: false,
-//     floatingActionButton: FloatingActionButton(
-//        onPressed: _postName,
-     // child: Icon(Icons.add),
-  //  ),
+        )
     );
   }
+
+  Widget buildSearch() =>
+      SearchWidget(
+        text: query,
+        hintText: 'Search courses',
+        onChanged: searchCourses,
+      );
+
+  Future searchCourses(String query) async => debounce(() async {
+    final books = await BooksApi.getBooks(query);
+    if (!mounted) return;
+    setState(() {
+      this.query = query;
+      this.books = books;
+    });
+  });
+
+  Widget buildBook(Courses book) => ListTile(
+  //  leading: Image.network(
+    leading:Text(
+      book.slug,
+     // fit: BoxFit.cover,
+      //width: 50,
+     // height: 50,
+    ),
+    
+   // title: Text(book.slug),
+   // subtitle: Text(book.slug),
+  );
 }
 
 
