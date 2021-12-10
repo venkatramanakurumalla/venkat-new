@@ -1,4 +1,5 @@
 import 'package:dean_institute_mobile_app/data/models/sample_course_model.dart';
+import 'package:dean_institute_mobile_app/pages/home_items/pui.dart';
 import 'package:dean_institute_mobile_app/pages/home_items/tabtwo.dart';
 import 'package:dean_institute_mobile_app/utility/app_palette.dart';
 import 'package:dean_institute_mobile_app/utility/constants.dart';
@@ -235,7 +236,7 @@ class CourseDetailsAll extends StatelessWidget {
                      var g=Get.arguments[0];
                      var p=Get.arguments[3];
                     Get.to(PaymentScreen(),arguments:[g,p]);
-                   // Get.to(RegistePage());
+                   // Get.to(registerPage1());
 
                       //_showAlert(context, () {
                       //  Get.toNamed("enroll", arguments: courseModel);}

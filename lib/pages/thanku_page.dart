@@ -41,10 +41,13 @@ class _ThankYouPageState extends State<ThankYouPage> {
                 color: themeColor,
                 shape: BoxShape.circle,
               ),
-            //  child: Image.asset(
-                //"assets/card.png",
-               // fit: BoxFit.contain,
-            //  ),
+             child: 
+             
+             
+             Image.asset(
+                "assets/images/download.png",
+                fit: BoxFit.contain,
+             ),
             ),
             SizedBox(height: screenHeight * 0.1),
             Text(
@@ -80,7 +83,8 @@ class _ThankYouPageState extends State<ThankYouPage> {
                 title: 'Home',
                 onTap: () {
                   Get.to(MyAlll());
-                  
+                 // HomePage
+                  Get.to(Home());
                 },
               ),
             ),

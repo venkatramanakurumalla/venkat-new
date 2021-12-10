@@ -45,6 +45,16 @@ static TextEditingController longitudeController = new TextEditingController();
   @override
    Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Credit/Dbit Card"),
+        titleSpacing: 00.0,
+        centerTitle: true,
+        toolbarHeight: 60.2,
+        //shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(360)),
+        elevation: 0.00,
+        //backgroundColor: Colors.greenAccent[400],
+        backgroundColor: Colors.red,
+      ), 
      
       backgroundColor: Colors.white,
       
@@ -56,9 +66,11 @@ static TextEditingController longitudeController = new TextEditingController();
                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                      TextField(
+                        //style: RoundedRectangleBorder(borderRadius: BorderRadius.circular(360)),
                       controller:  card_numberController,
                       decoration: InputDecoration(
                         labelText: "Card Number",
+                       // fillColor: Colors.blueAccent, filled: true
                         // controller: emailController,
                         border: OutlineInputBorder(),
                       ),
@@ -163,13 +175,24 @@ static TextEditingController longitudeController = new TextEditingController();
                     ),
                   ],
                 ),
-              ),
+
+                      
+              
+                         
+                        ),
+                      
+                    );
+
+
+
+
+            //  ),
           //  ),
            
          // ],
       //  ),
      // ),
-    );
+   // );
   }
 }
 
@@ -214,7 +237,7 @@ String longitude='yes';
     var response = await http.post(Uri.parse('https://www.flutter.fastrider.co/api/payment-by-stripe'),headers: {"Accept": "application/json"}, body: data);
   //https://www.flutter.fastrider.co/api/payment-by-stripe
     if(response.statusCode == 200) {
-     // Get.to(LoginPage());
+      Get.to(LoginPage());
       Get.snackbar("Sucess", "payment Sucess");
       jsonResponse = json.decode(response.body);
       print(jsonResponse);

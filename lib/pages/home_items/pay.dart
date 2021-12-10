@@ -1,3 +1,4 @@
+import 'package:dean_institute_mobile_app/pages/home_items/pui.dart';
 import 'package:flutter/material.dart';
 //import 'package:flui/payment.dart';
 import 'package:dean_institute_mobile_app/pages/home_items/payment.dart';
@@ -5,6 +6,7 @@ import 'package:dean_institute_mobile_app/pages/home_items/payment.dart';
 import 'package:get/get.dart';
 import 'package:pushable_button/pushable_button.dart';
 import '../payment.dart';
+import '../pym.dart';
 import '../thanku_page.dart';
 
 class PaymentScreen extends StatefulWidget {
@@ -135,8 +137,10 @@ else{
     offset: Offset(0, 2),
   ),
  
-// onPressed: () => payNow()),
+ //onPressed: () => payNow()),
 onPressed: () =>Get.to( RegistePage()) ),
+//onPressed: () =>Get.to( SignUpScreen()) ),
+//onPressed: () =>Get.to(registerPage1())),
 
         
      ) ] ));
