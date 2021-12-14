@@ -17,7 +17,7 @@ class RegistePage extends StatefulWidget {
 
 class _RegistePageState extends State<RegistePage> {
  
-  
+  var van=Get.arguments[0];
 
 //const SignUpPage({Key? key}) : super(key: key);
  
@@ -27,6 +27,7 @@ class _RegistePageState extends State<RegistePage> {
  String user_id='1';
 String latitude='yes';
 String longitude='yes';
+
   String ip='1212';
   static TextEditingController card_numberController = new TextEditingController();
 static TextEditingController exp_monthController= new TextEditingController();
@@ -99,14 +100,15 @@ static TextEditingController longitudeController = new TextEditingController();
                         border: OutlineInputBorder(),
                       ),
                     ),
-                    TextField(
-                      controller: amountController,
-                      decoration: InputDecoration(
-                        labelText: "amount",
+                    //TextField(
+                      //controller: amountController,
+                    //  decoration: InputDecoration(
+                      //  labelText: "amount",
                         // controller: emailController,
-                        border: OutlineInputBorder(),
-                      ),
-                    ),TextField(
+                        //border: OutlineInputBorder(),
+                     // ),
+                   // ),
+                    TextField(
                       controller: country_codeController ,
                       decoration: InputDecoration(
                         labelText: "Country-Code",
@@ -152,7 +154,7 @@ static TextEditingController longitudeController = new TextEditingController();
                         CheckBoxWithTitle(),
                         ElevatedButton(
                           onPressed: () {
-                             Register(StripeToken,user_id,card_numberController.text,exp_monthController.text, exp_yearController .text,cvcController.text,amountController.text,country_codeController.text,
+                             Register(StripeToken,user_id,card_numberController.text,exp_monthController.text, exp_yearController .text,cvcController.text,van,country_codeController.text,
   country_nameController.text,cityController.text,postalController.text,latitude,longitude,ip,stateController.text);
                             // Register(nameController.text,emailController.text, passwordController.text);
                           //  Register(nameController.text,emailController.text, passwordController.text);
@@ -248,7 +250,7 @@ String longitude='yes';
          // _isLoading = false;
        // });
        //sharedPreferences.setString("email", jsonResponse['email']);
-        Get.to(ThankYouPage());
+        Get.offAll(ThankYouPage());
       //  Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (BuildContext context) => MainPage()), (Route<dynamic> route) => false);
       }
     }

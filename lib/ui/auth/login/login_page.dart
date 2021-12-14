@@ -4,58 +4,79 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:dean_institute_mobile_app/pages/home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+//import 'package:get_storage/get_storage.dart';
 
 
 class LoginPage extends StatelessWidget {
+  // var box = GetStorage();
+   
+ // class LoginPage extends GetxController {
   LoginPage({Key? key}) : super(key: key);
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   FlutterSecureStorage localStorage = new FlutterSecureStorage();
-   
+ // Controller controller = Get.put(Controller()); 
+  // Controller controller1 = Get.put(Controller(), tag: 'aUniqueTag');
 
  /// _login() {
     //controller.loginUser(, password);
   //}
- j(){
+  //Map data = {
+      
+    //  'email': email,
+   //  'password': pass
+   // };
+  
+ r(){
  FlutterSecureStorage localStorage = new FlutterSecureStorage();
      localStorage.write(key: "email", value: "email").obs;
       var k=localStorage.read(key: "email").obs;
 
-     }
+    }
+     
  // @override
  void post(){
-   j();
+   r();
     bool _isLoading = false;
   var errorMsg;
-  Register(String  email, pass,) async {
+  Register(String  email,  pass,) async {
+    
     FlutterSecureStorage _localStorage = new FlutterSecureStorage();
      await _localStorage.write(key: "email", value: "email").obs;
-     
+    
 // SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    Map data = {
+  Map data = {
       
       'email': email,
-      'password': pass
+     'password': pass
     };
+   
     var jsonResponse = null;
+    
   //Uri('https://reqres.in/api/register');
     var response = await http.post(Uri.parse('https://deaninstitute.fastrider.co/api/login'), body: data);
     if(response.statusCode == 200) {
        
-     Get.to(HomePage(),arguments:email);
+     Get.to(HomePage(),arguments:[email]);
+     
       jsonResponse = json.decode(response.body);
       print(jsonResponse); 
+         print(jsonResponse); 
+      // var  v=jsonResponse.obs;
+       
+     // https://www.deaninstitute.fastrider.co/api/user?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjk3OTQ3Y2IwODZhMTU4MWJlNzYxYzY2MTM4YzVjNGFiNGNhNWRmOGRiYjIyOTU5NDcyZTlhOWI5N2Q3ZmI2ZTQwMmM4NDhiZDkyOTAzODgiLCJpYXQiOjE2MzkyMTA5OTcuNDYyNDg4ODg5Njk0MjEzODY3MTg3NSwibmJmIjoxNjM5MjEwOTk3LjQ2MjQ5Mjk0MjgxMDA1ODU5Mzc1LCJleHAiOjE2NzA3NDY5OTcuMjEyODYyOTY4NDQ0ODI0MjE4NzUsInN1YiI6IjE3Iiwic2NvcGVzIjpbXX0.qT9smrC_BxmKKuGTBj8SUI3RDgiR2JcoCP8Yakp-kEk2OzG43E8gNGweusZE4M3u46K43Gn9YORri_GcTmSzGy1-C_LTVAVTte1FHLiZQgzkTVworijHRnBvhnOk4WL-378Qrnd55_r8dzrPbvi-7c8WG2qfHQ-Fu0u2GH3Ji7GCt9wMkRucyjQZd6QNYq_JQFZg4MKoUYuQvBsufrilqW8r8QVDKKaNWDaIG-lFANsKiah8Zdq0eFmkDbaSaFXrIueA6RiC0nCJge5UdePQQnZYorz2tfK0gUE4SeOjn8BNt-4mY4Brd-p5rpKsZDut9SiNoQpKjzI3JHiEeGQydGgnT6sily1djvy_TK-irB6LN6MREvC7zr8aqnJ6SpgDUIvdtSezCxeCfLK_WhFzDkI35_TOXveh_uhYXxJOrcThln4Wj0JKC5-th_2KIcmszQ23gBOAPlEju_HMt9llA7euow186SsvHnzLG-sK3V6UTAYJzUqkb7-MB7JXvymTCqyH0l0BNhs3ry8RFXtUe5TpBEl4UTMNzR8-A9IJUAbCqUSfd2XMcWrL9m-p-7ZgwQk6mAEl1mJKZSICPjL60TZlUbcpCPkELQdJLjYe9CVqDU303AF79HH0cYIVT10TqM_E4Tjd741-LHPN6CpYlEiP_GMbeEuribKsVUjMdRY
        // Get.snackbar("Sucess", "Login Sucess");
        Get.snackbar(
               "Sucessful Login",
-               "Hello everyone",
+               "Hello everyone"+""+email,
                icon: Icon(Icons.person, color: Colors.white),
                snackPosition: SnackPosition.BOTTOM,
                backgroundColor: Colors.red,
@@ -69,6 +90,7 @@ class LoginPage extends StatelessWidget {
 
                );
       print("sucess");
+      print(r);
       //SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
        //Get.to(HomePage());
      //if(jsonResponse != null) {
@@ -99,14 +121,17 @@ class LoginPage extends StatelessWidget {
  }
 
   void postt(){Register(String email, pass) async {
-    j();
+    r();
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     FlutterSecureStorage _localStorage = new FlutterSecureStorage();
     Map data = {
       'email': email,
       'password': pass
     }; 
+    
     await _localStorage.write(key: "email", value: "email");
+   var k= await _localStorage.read(key:  email).obs;
+
     var jsonResponse = null;
     var response = await http.post(Uri.parse('https://deaninstitute.fastrider.co/api/login'), body: data);
     if(response.statusCode == 200) {
@@ -115,6 +140,7 @@ class LoginPage extends StatelessWidget {
       print(jsonResponse);
        print(jsonResponse);  
       print("sucess");
+      
       if(jsonResponse != null) {
       //  setState(() {
         // _isLoading = false;
@@ -131,8 +157,9 @@ class LoginPage extends StatelessWidget {
       print("The error message is: ${response.body}");
     }
   }
-
+  
   }
+  
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,

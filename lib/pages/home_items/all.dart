@@ -15,7 +15,18 @@ void main() => runApp(MyAlll());
 class MyAlll extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+     AppBar(
+        title: Text("ALL courses"),
+        titleSpacing: 00.0,
+        centerTitle: true,
+        toolbarHeight: 60.2,
+        //shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(360)),
+        elevation: 0.00,
+        //backgroundColor: Colors.greenAccent[400],
+        backgroundColor: Colors.red,
+      );
     return MaterialApp(
+       
       home: HomePage(),
     );
   }
@@ -230,19 +241,22 @@ class _HomePageState extends State<HomePage> {
                  itemBuilder: (ctx, index){return Container(
             child:      SizedBox(
  // height: double.infinity, 
- height: 1000,
+ height: 10,
     
-              child:     Card(
-                color:Colors.redAccent,
-        elevation: 1.0,
-        child: Column(
+              child:     Card(clipBehavior: Clip.antiAlias,
+       // shape: RoundedRectangleBorder(
+          //borderRadius: BorderRadius.circular(10.0),
+                color:Colors.blueAccent,
+      ///elevation: 1.0,
+        child:  Column(
           children: [
             ListTile(
              // title: Text(snapshot.data[index].slug,textAlign: TextAlign.center,),
-            //  subtitle: Text("Enroll now"),
+              //subtitle: Text("Enroll now"),
               
-           trailing:
-          Image.network('https://deaninstitute.fastrider.co//'+snapshot.data[index].image),
+          trailing:
+         // child:
+          Image.network('https://deaninstitute.fastrider.co//'+snapshot.data[index].image,fit: BoxFit.cover,),
             // subtitle: Icon(Icons.book_online),
              onTap: () {
                       if(index==0){
@@ -396,3 +410,4 @@ class _HomePageState extends State<HomePage> {
         //),
      );
   }})));}}
+

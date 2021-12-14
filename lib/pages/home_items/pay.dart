@@ -1,4 +1,6 @@
 import 'package:dean_institute_mobile_app/pages/home_items/pui.dart';
+import 'package:dean_institute_mobile_app/pages/sign_up_page.dart';
+import 'package:dean_institute_mobile_app/ui/auth/login/login_page.dart';
 import 'package:flutter/material.dart';
 //import 'package:flui/payment.dart';
 import 'package:dean_institute_mobile_app/pages/home_items/payment.dart';
@@ -8,8 +10,13 @@ import 'package:pushable_button/pushable_button.dart';
 import '../payment.dart';
 import '../pym.dart';
 import '../thanku_page.dart';
+LoginPage c = Get.put(LoginPage());
+ final controller = Get.put(LoginPage());
+
 
 class PaymentScreen extends StatefulWidget {
+   var amount= Get.arguments[1];
+    var  a=Get.arguments[1];
   @override
   _PaymentScreenState createState() => _PaymentScreenState();
 }
@@ -59,7 +66,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
 else{
 Text(response.message);
 }
-    
+   var amount= Get.arguments[1];
      // Get.snackbar(
            //   response.message,
             //   "Hello",
@@ -138,11 +145,14 @@ else{
   ),
  
  //onPressed: () => payNow()),
-onPressed: () =>Get.to( RegistePage()) ),
+//onPressed: () =>Get.to( RegistePage()) ),
 //onPressed: () =>Get.to( SignUpScreen()) ),
 //onPressed: () =>Get.to(registerPage1())),
+//
+//onPressed:()=>Get.offAll(RegistePage()),
+onPressed:()=>Get.to(RegistePage(),arguments:Get.arguments[1]),
 
         
-     ) ] ));
+     ) )] ));
  }
 }

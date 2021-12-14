@@ -10,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 
 
+
 import 'icon_buttons.dart';
 
 class HomePageAppBar extends StatelessWidget {
@@ -86,15 +87,23 @@ class HomePageAppBar extends StatelessWidget {
                                 top: 11.h,
                                 right: 15.w),
                             hintText: "Search courses, bootcamp"),
+                           // onTap:setState ,
                       ),
                     )),
-                    // onButtonTap: () {
-                 //   print("Pressed Bell Button");
-                //  },
+                   // onButtonTap: () {
+                    //print("Pressed Bell Button");
+                // },
               )),
         ],
+        
+          
+      
       ),
     );
+  
   }
+ // void setState() {
+    //Get.to(Search);
+  //print("Button Press");
+//}
 }
-

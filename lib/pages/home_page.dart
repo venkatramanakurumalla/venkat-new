@@ -12,17 +12,22 @@ import 'package:get/get.dart';
 import 'package:dean_institute_mobile_app/pages/home_items/search.dart';
 
 import 'home_items/all.dart';
+//
 
+ //var g=Get.arguments[0];
+                   // Get.to(PaymentScreen(),arguments:g);
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
-
+  
+ //static var vae=Get.arguments[0];
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
- var email=Get.arguments;
+ // static vae=Get.arguments;
+// var email=Get.arguments;
  
 
   List<Widget> _bottomNavigationPages = [
@@ -53,6 +58,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
+            
               icon: Icon(
                 Icons.home,
               ),
@@ -105,6 +111,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _onItemTapped(int index) {
+   
     if (index != _selectedIndex) {
       setState(() {
         _selectedIndex = index;

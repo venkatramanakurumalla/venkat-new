@@ -2,10 +2,11 @@ import 'package:dean_institute_mobile_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-
+import 'package:dean_institute_mobile_app/pages/home_page.dart';
 import 'home_button.dart';
 import 'home_items/all.dart';
 import 'home_items/home_main_page.dart';
+import 'package:dean_institute_mobile_app/pages/home_page.dart';
 
 class ThankYouPage extends StatefulWidget {
 //  const ThankYouPage({Key? key, required this.title}) : super(key: key);

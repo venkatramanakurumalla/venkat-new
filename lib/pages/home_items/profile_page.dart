@@ -20,8 +20,8 @@ import '../profile_pages/payment_methods.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Profile extends StatelessWidget {
-  const Profile({Key? key}) : super(key: key);
-
+ // const Profile({Key? key}) : super(key: key);
+  
  // void _onLogOutPressed() {
    ///// onPressed: ()
    // async {
@@ -43,6 +43,9 @@ class Profile extends StatelessWidget {
  // }
 
   @override
+  //final HomePage c = Get.put(HomePage());
+ // var email = HomePage.vae;
+          // c.localStorage.readAll();
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -60,6 +63,7 @@ class Profile extends StatelessWidget {
             prefs.remove('email');
             
            final LoginPage c = Get.put(LoginPage());
+           c.localStorage.readAll();
             c. localStorage.deleteAll();
           
             Navigator.pushReplacement(context,
@@ -154,8 +158,11 @@ Card(
                   Icons.email,
                   color: Colors.teal,
                 ),
-                title: Text(
-                  "venkatandroid10@gmail.com",
+              
+               //  SharedPreferences prefs = await SharedPreferences.getInstance();
+           // prefs.remove('email');
+                title: Text(HomePage.vae,//email,
+///venkatandroid10@gmail.com",
                   style: TextStyle(
                     color: Colors.teal.shade900,
                     fontFamily: 'SourceSans',

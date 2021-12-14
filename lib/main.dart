@@ -8,6 +8,7 @@ import 'package:dean_institute_mobile_app/pages/sign_up_page.dart';
 import 'package:dean_institute_mobile_app/ui/auth/login/login_page.dart';
 import 'package:dean_institute_mobile_app/ui/auth/login/login_page_binding.dart';
 import 'package:dean_institute_mobile_app/ui/splash/welcome_page.dart';
+import 'package:dean_institute_mobile_app/ui/splash/welcome2.dart';
 import 'package:dean_institute_mobile_app/ui/splash/welcome_page_binding.dart';
 import 'package:dean_institute_mobile_app/utility/app_palette.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +84,7 @@ class _HomePageState extends State<HomePage> {
         
           GetPage(
             name: "/landing",
-            page: () => WelcomePage(),
+            page: () => WelcomeePage(),
             binding: WelcomePageBinding(),
           ),
           GetPage(

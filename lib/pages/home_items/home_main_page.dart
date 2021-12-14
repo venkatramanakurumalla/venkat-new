@@ -5,6 +5,7 @@ import 'package:dean_institute_mobile_app/pages/home_items/sample_data.dart';
 import 'package:dean_institute_mobile_app/pages/home_items/subone.dart';
 import 'package:dean_institute_mobile_app/pages/it%20pages/page1.dart';
 import 'package:dean_institute_mobile_app/pages/it%20pages/page2.dart';
+import 'package:dean_institute_mobile_app/ui/auth/login/login_page.dart';
 import 'package:dean_institute_mobile_app/widgets/course_list_item.dart';
 import 'package:dean_institute_mobile_app/widgets/dynamic_tabs.dart';
 import 'package:dean_institute_mobile_app/widgets/home_app_bar.dart';
@@ -25,6 +26,8 @@ class Home extends StatefulWidget {
    @override
   _HomeState createState() => _HomeState();
 }
+var van= Get.put(LoginPage); 
+
 
 class _HomeState extends State<Home> {
   var characterList= <Character>[]; 
@@ -93,22 +96,23 @@ dynamic email = Get.arguments;
         flexibleSpace: HomePageAppBar(),),
       
        body: Container(
-       child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+       child: ListView.builder(
+           // gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                
-                maxCrossAxisExtent: 300,
-                childAspectRatio: 3 / 2,
-                crossAxisSpacing:5,
-                mainAxisSpacing: 5),
+               /// maxCrossAxisExtent: 300,
+               // childAspectRatio: 3 / 2,
+               // crossAxisSpacing:5,
+               // mainAxisSpacing: 5),
            itemCount:  characterList.length,
             itemBuilder: (BuildContext ctx, index) {
-                return ListTile(
-                //  title: Text(characterList[index].category_name),
-                //  subtitle: Text(characterList[index].slug),
-                  //leading: CircleAvatar(
+                return 
+               ListTile(
+                  title: Text(characterList[index].category_name),
+                 subtitle: Text("Enroll Now"),
+                 // leading: CircleAvatar(
                   //  background 
                    leading: Image.network("https://deaninstitute.fastrider.co//"+characterList[index].category_logo),
-                    title: Text(characterList[index].category_name),
+                   // title: Text(characterList[index].category_name),
                  onTap: () {
                       if(index==0){
                         Get.to(MyAllit(),arguments:characterList[index].category_name);
@@ -142,7 +146,3 @@ dynamic email = Get.arguments;
     
   }
 }
-
-
-
-    

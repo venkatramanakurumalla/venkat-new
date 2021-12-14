@@ -45,6 +45,8 @@ dependencies:
   webview_flutter: ^2.0.12
   pushable_button: ^0.0.3
   flutter_launcher_icons: any
+  get_storage: ^2.0.3
+  
     
 
   
