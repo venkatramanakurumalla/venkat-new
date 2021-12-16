@@ -43,6 +43,7 @@ class Profile extends StatelessWidget {
  // }
 
   @override
+  
   //final HomePage c = Get.put(HomePage());
  // var email = HomePage.vae;
           // c.localStorage.readAll();
@@ -61,6 +62,7 @@ class Profile extends StatelessWidget {
                   trailing: TextButton( onPressed: () async {
             SharedPreferences prefs = await SharedPreferences.getInstance();
             prefs.remove('email');
+            //  prefs.get('email');
             
            final LoginPage c = Get.put(LoginPage());
            c.localStorage.readAll();
@@ -88,6 +90,7 @@ class Profile extends StatelessWidget {
                     
                     // _onLogOutPressed,
 
+
                     child: Text(
                       "Log out",
                       style: GoogleFonts.lato(
@@ -95,14 +98,16 @@ class Profile extends StatelessWidget {
                     ),
                   ),
                 ),
-
+   
+            
+            //  prefs.get('email');
                  CircleAvatar(
               radius: 50,
             backgroundColor:Colors.cyan,
              // backgroundImage: I
             ),
-              Text(
-              '',
+              Text(//HomePage.vae"
+             "" ,
               style: TextStyle(
                 fontSize: 40,
                 fontFamily: 'Pacifico',
@@ -161,8 +166,8 @@ Card(
               
                //  SharedPreferences prefs = await SharedPreferences.getInstance();
            // prefs.remove('email');
-                title: Text(HomePage.vae,//email,
-///venkatandroid10@gmail.com",
+                title: Text(//HomePage.vae,//email,
+"venkatandroid10@gmail.com",
                   style: TextStyle(
                     color: Colors.teal.shade900,
                     fontFamily: 'SourceSans',
@@ -175,5 +180,5 @@ Card(
         ],
       ),
          ), ),));
-  }
+     }
 }

@@ -1,3 +1,4 @@
+import 'package:dean_institute_mobile_app/pages/cloud/cloud1.dart';
 import 'package:dean_institute_mobile_app/utility/app_palette.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,7 +25,7 @@ class _RegistePageState extends State<RegistePage> {
 // bool _isLoading = false;
   var errorMsg;
   String StripeToken='pk_test_51JPqrYSBtCOIyCFtizgVpjDQAibCuY983h4MYUGwrWRALR9RL2j9vsuhzW279LVCjfx8Aqt5cpPuUWcGeTaBqxSH00mRBRc4ax';
- String user_id='1';
+ static String user_id='1';
 String latitude='yes';
 String longitude='yes';
 
@@ -197,7 +198,7 @@ static TextEditingController longitudeController = new TextEditingController();
    // );
   }
 }
-
+  
    Register(String StripeToken,user_id,card,month,year,cvc,amount,countrycode,countryname,city,postal,latitude,longitude,ip,state) async {
        bool _isLoading = false;
   var errorMsg;
@@ -231,6 +232,7 @@ String longitude='yes';
 
      
     };
+     var userid=data.containsValue(user_id);
    
     var jsonResponse = null;
     var token;  //
@@ -264,6 +266,7 @@ String longitude='yes';
   }
 
 class CheckBoxWithTitle extends StatefulWidget {
+  static var user_id;
   const CheckBoxWithTitle({
     Key? key,
   }) : super(key: key);
@@ -273,6 +276,7 @@ class CheckBoxWithTitle extends StatefulWidget {
 }
 
 class _CheckBoxWithTitleState extends State<CheckBoxWithTitle> {
+  static var user_id;
   bool value = false;
   @override
   Widget build(BuildContext context) {
@@ -298,4 +302,8 @@ class _CheckBoxWithTitleState extends State<CheckBoxWithTitle> {
   
   }
   
+  
+}
+class USER{
+  static var user_id;
 }

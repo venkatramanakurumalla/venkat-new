@@ -19,8 +19,7 @@ import 'home_items/all.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
-  
- //static var vae=Get.arguments[0];
+  // static var vae=Get.arguments[0];
   @override
   _HomePageState createState() => _HomePageState();
 }

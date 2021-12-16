@@ -60,7 +60,8 @@ class LoginPage extends StatelessWidget {
     };
    
     var jsonResponse = null;
-    
+   var r=email.obs;
+   Obx(() => Text("${email}"));
   //Uri('https://reqres.in/api/register');
     var response = await http.post(Uri.parse('https://deaninstitute.fastrider.co/api/login'), body: data);
     if(response.statusCode == 200) {
@@ -76,7 +77,7 @@ class LoginPage extends StatelessWidget {
        // Get.snackbar("Sucess", "Login Sucess");
        Get.snackbar(
               "Sucessful Login",
-               "Hello everyone"+""+email,
+               "Hello everyone"+""+ email,
                icon: Icon(Icons.person, color: Colors.white),
                snackPosition: SnackPosition.BOTTOM,
                backgroundColor: Colors.red,

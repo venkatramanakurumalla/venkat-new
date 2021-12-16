@@ -5,6 +5,7 @@ import 'package:dean_institute_mobile_app/pages/home_items/sample_data.dart';
 import 'package:dean_institute_mobile_app/pages/home_items/subone.dart';
 import 'package:dean_institute_mobile_app/pages/it%20pages/page1.dart';
 import 'package:dean_institute_mobile_app/pages/it%20pages/page2.dart';
+import 'package:dean_institute_mobile_app/pages/payment.dart';
 import 'package:dean_institute_mobile_app/ui/auth/login/login_page.dart';
 import 'package:dean_institute_mobile_app/widgets/course_list_item.dart';
 import 'package:dean_institute_mobile_app/widgets/dynamic_tabs.dart';
@@ -21,14 +22,16 @@ import 'dart:convert';
 import 'package:dean_institute_mobile_app/pages/home_items/dp.dart';
 import 'package:dean_institute_mobile_app/pages/home_items/subtwo.dart';
 
+import 'package:dean_institute_mobile_app/pages/home_items/payment.dart';
 class Home extends StatefulWidget {
+  
   const Home({Key? key}) : super(key: key);
    @override
   _HomeState createState() => _HomeState();
 }
 var van= Get.put(LoginPage); 
 
-
+//CheckBoxWithTitle.user_id;
 class _HomeState extends State<Home> {
   var characterList= <Character>[]; 
 var characterList1= <Character>[]; 
@@ -74,7 +77,7 @@ var characterList3= <Character>[];
   }
 //var one = Get.arguments;
 dynamic email = Get.arguments;
-
+//var k=RegistePage.user_id;
   @override
   
  //dynamic email = Get.arguments;
