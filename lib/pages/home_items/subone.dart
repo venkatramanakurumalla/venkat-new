@@ -76,7 +76,7 @@ class User {
   User(
       { //required this.image,
          required this.id,
-          required this.slug,
+          required this.slug, invoiceNo, user_id, balance_transaction,
        //   required this.description,
           // required this.title,
             

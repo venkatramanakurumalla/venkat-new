@@ -60,13 +60,14 @@ class LoginPage extends StatelessWidget {
     };
    
     var jsonResponse = null;
+    // Controller c = Get.put(Controller());
    var r=email.obs;
    Obx(() => Text("${email}"));
   //Uri('https://reqres.in/api/register');
     var response = await http.post(Uri.parse('https://deaninstitute.fastrider.co/api/login'), body: data);
     if(response.statusCode == 200) {
        
-     Get.to(HomePage(),arguments:[email]);
+     Get.to(HomePage(),arguments:email);
      
       jsonResponse = json.decode(response.body);
       print(jsonResponse); 

@@ -7,6 +7,8 @@ import 'package:dean_institute_mobile_app/pages/it%20pages/page1.dart';
 import 'package:dean_institute_mobile_app/pages/it%20pages/page2.dart';
 import 'package:dean_institute_mobile_app/pages/payment.dart';
 import 'package:dean_institute_mobile_app/ui/auth/login/login_page.dart';
+import 'package:dean_institute_mobile_app/ui/auth/login/login_page.dart';
+import 'package:dean_institute_mobile_app/ui/auth/login/login_page.dart';
 import 'package:dean_institute_mobile_app/widgets/course_list_item.dart';
 import 'package:dean_institute_mobile_app/widgets/dynamic_tabs.dart';
 import 'package:dean_institute_mobile_app/widgets/home_app_bar.dart';
@@ -30,7 +32,11 @@ class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 var van= Get.put(LoginPage); 
-
+//Obx()=>
+                    // Text('Obx: ${van.LoginPage.value}');
+            
+//ObX () => Text(');
+              
 //CheckBoxWithTitle.user_id;
 class _HomeState extends State<Home> {
   var characterList= <Character>[]; 

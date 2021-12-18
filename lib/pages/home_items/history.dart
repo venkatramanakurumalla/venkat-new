@@ -11,12 +11,13 @@ import "package:get/get.dart";
 import 'package:dean_institute_mobile_app/pages/course_details_page.dart';
 import 'package:dean_institute_mobile_app/pages/home_items/dp.dart';
 import 'package:dean_institute_mobile_app/pages/home_items/dpa.dart';
+import 'package:dean_institute_mobile_app/pages/home_page.dart';
 
 
   
-void main() => runApp(MyAllitsc1());
+void main() => runApp(hist());
   
-class MyAllitsc1 extends StatelessWidget {
+class hist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,8 +25,8 @@ class MyAllitsc1 extends StatelessWidget {
     );
   }
 }
-class history {
- late int id;
+class user {
+late  int id;
    late String invoiceNo;
   late int userId;
   late int courseId;
@@ -34,7 +35,7 @@ class history {
   late String paymentMethod;
   late String balanceTransaction;
   late String currency;
-  late String mount;
+  late String amount;
  late  Null cardNumber;
    late Null cardexpMonth;
   late Null cardexpYear;
@@ -51,7 +52,7 @@ class history {
   late String createdAt;
    late String updatedAt;
 
-  history(
+  user(
       {required this.id,
      required this.invoiceNo,
      required this.userId,
@@ -61,7 +62,7 @@ class history {
     required  this.paymentMethod,
      required this.balanceTransaction,
      required this.currency,
-     //required this.amount,
+     required this.amount,
      required this.cardNumber,
      required this.cardexpMonth,
      required this.cardexpYear,
@@ -78,7 +79,7 @@ class history {
     required  this.createdAt,
     required  this.updatedAt});
 
-   history.fromJson(Map<String, dynamic> json) {
+   user.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     invoiceNo = json['invoice_no'];
     userId = json['user_id'];
@@ -88,7 +89,7 @@ class history {
     paymentMethod = json['payment_method'];
     balanceTransaction = json['balance_transaction'];
     currency = json['currency'];
-   // amount = json['amount'];
+    amount = json['amount'];
     cardNumber = json['card_number'];
     cardexpMonth = json['cardexp_month'];
     cardexpYear = json['cardexp_year'];
@@ -117,7 +118,7 @@ class history {
     data['payment_method'] = this.paymentMethod;
     data['balance_transaction'] = this.balanceTransaction;
     data['currency'] = this.currency;
-   // data['amount'] = this.amount;
+   data['amount'] = this.amount;
     data['card_number'] = this.cardNumber;
     data['cardexp_month'] = this.cardexpMonth;
     data['cardexp_year'] = this.cardexpYear;
@@ -137,26 +138,7 @@ class history {
   }
 }
   
-//Creating a class user to store the data;
-class User1 {
-   var id;
-  var category_id;
- // var subcategory_name;
-  // final String subcategory_logo ;
-  var slug;
-  var order;
-  var created_at;
-  var updated_at;
-  //final int id;
-  
-  
-  User1({
-    required this.id,
-  //required this.subcategory_name,
-    required this.slug,
-   // requiredrequired this.subcategory_logo,
-  });
-}
+
   
 class HomePage extends StatefulWidget {
   @override
@@ -181,15 +163,18 @@ class _HomePageState extends State<HomePage> {
     List<User> users = [];
    for (var singleUser in responseData) {
       User user = User(
-         id: singleUser["id"],
-       //  description: singleUser['description'],
+        id: singleUser["id"],
+         invoiceNo: singleUser['invoiceNo'], slug: '', 
+        user_id: singleUser["user_id"],
+
+        balance_transaction:singleUser["balance_transaction"],
        //  title:singleUser["title"], 
        // image: singleUser["image"],
         //sellingPrice:singleUser["sellingPrice"],
          // subcategory_logo: singleUser["subcategory_logo"],
        // subcategory_name: singleUser["subcategory_name"],
-          slug: singleUser["slug"]);
-          
+      //    slug: singleUser["slug"]);
+      );
   
       //Adding user to the list.
       users.add(user);
@@ -198,6 +183,7 @@ class _HomePageState extends State<HomePage> {
   }
   
   @override
+
 
   Widget build(BuildContext context) {
    // return SafeArea(
@@ -254,15 +240,15 @@ class _HomePageState extends State<HomePage> {
  // height: double.infinity, 
  height: 1000,
     
-              child:     Card(
-        elevation: 1.0,
+              //child:     Card( 
+       // elevation: 1.0,
         child: Column(
           children: [
             ListTile(
-             title: Text(snapshot.data[index].slug,textAlign: TextAlign.center,),
-              //subtitle: Text("Enroll now"),
+      //   title: Text(snapshot.data[index].id,textAlign: TextAlign.center,),
+              subtitle: Text("Enroll now"),
           
-           //  trailing: Image.network('https://deaninstitute.fastrider.co//'+snapshot.data[index].image),
+        //    trailing:Text(snapshot.data[index].amount),
             // trailing: Icon(Icons.book_online),
                ),
 
@@ -291,7 +277,7 @@ class _HomePageState extends State<HomePage> {
                    
                   // } 
             // ]  
-             ));//);
+             );//);//);
               //}
             },
          // ),

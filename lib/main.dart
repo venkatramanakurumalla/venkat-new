@@ -120,6 +120,7 @@ class _HomePageState extends State<HomePage> {
           GetPage(
             name: "/user/payment_history",
             page: () => PaymentHistory(),
+            
           ),
           //GetPage(name: "/", page: () => ,),
         ],

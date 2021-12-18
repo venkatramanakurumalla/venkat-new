@@ -12,14 +12,15 @@ import 'package:get/get.dart';
 import 'package:dean_institute_mobile_app/pages/home_items/search.dart';
 
 import 'home_items/all.dart';
+import 'home_items/history.dart';
 //
 
- //var g=Get.arguments[0];
+var g=Get.arguments;
                    // Get.to(PaymentScreen(),arguments:g);
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
-  // static var vae=Get.arguments[0];
+   static var vae=Get.arguments;
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -43,7 +44,9 @@ class _HomePageState extends State<HomePage> {
   Search(),
   // MyCourses(),
   //  Profile(),
-     Myabout()
+     Myabout(),
+     hist()
+     
   ];
 
   int _selectedIndex = 0;
@@ -101,6 +104,15 @@ class _HomePageState extends State<HomePage> {
             ),
             label: "About",
           ),
+
+
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.messenger_rounded,
+            ),
+            label: "history",
+            
+          ),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
@@ -114,6 +126,9 @@ class _HomePageState extends State<HomePage> {
     if (index != _selectedIndex) {
       setState(() {
         _selectedIndex = index;
+
+         print(Get.arguments);
+        // arguments:Get.arguments;
       });
     }
   }
